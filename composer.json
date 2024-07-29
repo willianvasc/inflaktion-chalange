@@ -1,0 +1,17 @@
+{
+  "name": "dev/challange",
+  "autoload": {
+    "psr-4": {
+      "app\\": "app"
+    }
+  },
+  "authors": [
+    {
+      "name": "Willianvasc",
+      "email": "82626352+willianvasc@users.noreply.github.com"
+    }
+  ],
+  "require": {
+    "league/plates": "^3.4"
+  }
+}
