@@ -131,11 +131,12 @@ class emailController
 
         $updateClauses = [];
         foreach ($updateFields as $field => $value) {
-            $updateClauses[] = "$field = :$field";
+            $updateClauses[] = "`$field` = :$field";
         }
 
         try {
             $sql = "UPDATE successful_emails SET " . implode(', ', $updateClauses) . " WHERE id = :id";
+
             $stmt = $this->db->prepare($sql);
             foreach ($updateFields as $field => &$value) {
                 $stmt->bindParam(":$field", $value);
