@@ -6,21 +6,57 @@
 
 This API gets the body of the email and saves it in the 'email' column. It then clears the HTML body and saves the raw text in the 'raw_text' column.
 
-Routes:
+## API Endpoints
 
-- **POST /store**: Requires the 'email' field in the POST request, which should contain the email body in HTML. This route inserts a new email body into the database and cleans the body in the 'raw_text' column.
-- **POST /getall**: Does not require any POST values. This route lists all records in the database.
-- **POST /getbyid**: Requires the 'id' field in the POST request. This route lists the record by ID.
-- **POST /deletebyid**: Requires the 'id' field in the POST request. This route deletes the record by ID.
-- **POST /update**: Requires the 'id' field and the 'email' field (HTML body of the email). This route updates the record by ID.
+### POST /store
+**Description:** Requires the 'email' field in the POST request, which should contain the email body in HTML. This route inserts a new email body into the database and cleans the body in the 'raw_text' column.
 
-POST:
-- **/store** | email => email_html_value
-- **/getall** | no params
-- **/getbyid** | id => id_value
-- **/deletebyid** | id => id_value
-- **/update** | id => id_value, email => email_html_value
+**Parameters:**
+- email => email_html_value
+- affiliate_id => affiliate_id_value
+- envelope => envelope_value
+- from => from_value
+- subject => subject_value
+- dkim => dkim_value
+- SPF => SPF_value
+- spam_score => spam_score_value
+- sender_ip => sender_ip_value
+- to => to_value
 
-To send a POST request, you need to include the token in your request body:
+### POST /getall
+**Description:** Does not require any POST values. This route lists all records in the database.
 
-token => "7c4a8d09ca3762af61e59520943dc26494f8941b"
+**Parameters:** None
+
+### POST /getbyid
+**Description:** Requires the 'id' field in the POST request. This route lists the record by ID.
+
+**Parameters:**
+- id => id_value
+
+### POST /deletebyid
+**Description:** Requires the 'id' field in the POST request. This route deletes the record by ID.
+
+**Parameters:**
+- id => id_value
+
+### POST /update
+**Description:** Requires the 'id' field and the 'email' field (HTML body of the email). This route updates the record by ID.
+
+**Parameters:**
+- id => id_value
+- email => email_html_value
+- affiliate_id => affiliate_id_value (optional)
+- envelope => envelope_value (optional)
+- from => from_value (optional)
+- subject => subject_value (optional)
+- dkim => dkim_value (optional)
+- SPF => SPF_value (optional)
+- spam_score => spam_score_value (optional)
+- sender_ip => sender_ip_value (optional)
+- to => to_value (optional)
+
+**Note:** To send a POST request, you need to include the token in your request body:
+
+**Token:**
+- token => "7c4a8d09ca3762af61e59520943dc26494f8941b"
