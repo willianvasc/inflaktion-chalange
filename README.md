@@ -5,8 +5,9 @@
 <br><br>
 
 This API gets the body of the email and saves it in the 'email' column. It then clears the HTML body and saves the raw text in the 'raw_text' column.
-## SQL QUERY
-DB NAME: emails
+## SQL
+DB NAME: emails<br>
+**SQL QUERY:**
 ```CREATE TABLE `successful_emails` (
   `id` int NOT NULL AUTO_INCREMENT,
   `affiliate_id` mediumint NOT NULL, ##the list's affiliate ID, ignore
